@@ -1,0 +1,207 @@
+/* ===========================================================
+   CLIENT DASHBOARD STYLES (simple, calm, focused)
+   =========================================================== */
+
+.client-page {
+  min-height: 100%;
+  background:
+    radial-gradient(800px 340px at 85% -10%, rgba(91, 91, 240, 0.1), transparent 60%),
+    var(--bg);
+}
+
+/* ---------- Header ---------- */
+.client-header {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+.client-header-inner {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.client-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.client-user .who {
+  text-align: right;
+}
+.client-user strong {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+}
+.client-user small {
+  color: var(--text-faint);
+  font-size: 12px;
+}
+
+/* ---------- Body ---------- */
+.client-body {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 36px 24px 64px;
+}
+.client-hello h1 {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+.client-hello p {
+  color: var(--text-muted);
+  margin-top: 6px;
+  font-size: 15px;
+}
+.client-summary {
+  display: flex;
+  gap: 12px;
+  margin: 24px 0 22px;
+  flex-wrap: wrap;
+}
+.mini-stat {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  min-width: 150px;
+}
+.mini-stat strong {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+.mini-stat span {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* ---------- Email cards ---------- */
+.client-list {
+  display: grid;
+  gap: 14px;
+}
+.client-card {
+  padding: 22px;
+  transition: all 0.2s var(--ease);
+}
+.client-card:hover {
+  box-shadow: var(--shadow);
+  border-color: var(--border-strong);
+}
+.client-card.leaving {
+  opacity: 0;
+  transform: translateX(24px) scale(0.98);
+  max-height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin: 0;
+  overflow: hidden;
+  transition: all 0.35s var(--ease);
+}
+.cc-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+.cc-top .meta {
+  flex: 1;
+  min-width: 0;
+}
+.cc-sender {
+  font-weight: 600;
+}
+.cc-date {
+  font-size: 12px;
+  color: var(--text-faint);
+  white-space: nowrap;
+}
+.cc-subject {
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 12px 0 8px;
+}
+.cc-summary {
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+.cc-why {
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  background: var(--orange-soft);
+  color: #8a4a06;
+  font-size: 13px;
+  line-height: 1.55;
+}
+.cc-why b {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 3px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.cc-actions {
+  margin-top: 16px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.badge-urgent {
+  background: var(--red-soft);
+  color: var(--red);
+}
+
+/* ---------- Taken-over note ---------- */
+.handed-note {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--green);
+  font-weight: 600;
+  font-size: 13px;
+}
+
+/* ---------- Toast (small confirmation message) ---------- */
+.toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--primary);
+  color: #fff;
+  padding: 11px 18px;
+  border-radius: 999px;
+  font-weight: 500;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  animation: fadeUp 0.3s var(--ease) both;
+  z-index: 100;
+}
+
+@media (max-width: 560px) {
+  .client-body {
+    padding-top: 24px;
+  }
+  .cc-top {
+    flex-wrap: wrap;
+  }
+  .cc-actions .btn {
+    flex: 1;
+  }
+}

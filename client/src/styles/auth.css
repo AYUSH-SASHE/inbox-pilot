@@ -1,0 +1,294 @@
+/* ===========================================================
+   LOGIN, SIGNUP AND ONBOARDING STYLES
+   =========================================================== */
+
+.auth-page {
+  min-height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* Left side: the form */
+.auth-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px 24px;
+}
+.auth-box {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+.auth-box .logo {
+  margin-bottom: 36px;
+}
+.auth-box h1 {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+.auth-box .auth-sub {
+  color: var(--text-muted);
+  margin: 8px 0 26px;
+}
+
+/* Right side: brand panel */
+.auth-brand {
+  background: var(--primary);
+  color: #fff;
+  padding: 56px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.auth-brand::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(520px 300px at 80% 0%, rgba(91, 91, 240, 0.55), transparent 70%);
+}
+.auth-brand > * {
+  position: relative;
+}
+.auth-brand h2 {
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  margin-bottom: 14px;
+}
+.auth-brand p {
+  color: #b8bbd6;
+  max-width: 380px;
+  line-height: 1.6;
+}
+.brand-points {
+  margin-top: 28px;
+  display: grid;
+  gap: 14px;
+}
+.brand-point {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #dfe0f2;
+}
+.brand-point svg {
+  color: #9b9bff;
+  flex-shrink: 0;
+}
+
+/* ---------- Form controls ---------- */
+.field {
+  margin-bottom: 16px;
+}
+.field label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.input {
+  width: 100%;
+  padding: 11px 13px;
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  outline: none;
+  transition: all 0.15s var(--ease);
+}
+.input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(91, 91, 240, 0.15);
+}
+.btn-block {
+  width: 100%;
+}
+.form-error {
+  background: var(--red-soft);
+  color: var(--red);
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+.auth-switch {
+  margin-top: 22px;
+  text-align: center;
+  color: var(--text-muted);
+}
+.auth-switch a {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* ---------- Role picker ---------- */
+.role-picker {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.role-option {
+  padding: 12px;
+  text-align: left;
+  background: var(--surface);
+  border: 1.5px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  transition: all 0.15s var(--ease);
+}
+.role-option strong {
+  display: block;
+  font-weight: 600;
+}
+.role-option span {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+.role-option:hover {
+  border-color: var(--accent);
+}
+.role-option.active {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+/* ---------- Demo login shortcuts ---------- */
+.demo-box {
+  margin-top: 26px;
+  padding: 14px;
+  background: var(--accent-soft);
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  color: var(--text-muted);
+}
+.demo-box strong {
+  color: var(--text);
+}
+.demo-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+/* ---------- Onboarding ---------- */
+.onboard {
+  min-height: 100%;
+  display: grid;
+  place-items: center;
+  padding: 32px 16px;
+  background:
+    radial-gradient(800px 360px at 85% -10%, rgba(91, 91, 240, 0.12), transparent 60%),
+    var(--bg);
+}
+.onboard-card {
+  width: 100%;
+  max-width: 560px;
+  padding: 34px;
+  box-shadow: var(--shadow);
+}
+.steps {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 26px;
+}
+.step-bar {
+  flex: 1;
+  height: 4px;
+  border-radius: 4px;
+  background: var(--border);
+  transition: background 0.3s var(--ease);
+}
+.step-bar.done {
+  background: var(--accent);
+}
+.onboard-card h1 {
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+.onboard-card .auth-sub {
+  color: var(--text-muted);
+  margin: 6px 0 22px;
+}
+.provider-list {
+  display: grid;
+  gap: 12px;
+}
+.provider {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+.provider-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 11px;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  color: #fff;
+  flex-shrink: 0;
+}
+.provider-info {
+  flex: 1;
+  min-width: 0;
+}
+.provider-info strong {
+  display: block;
+  font-weight: 600;
+}
+.provider-info span {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+.connected-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--green);
+  font-weight: 600;
+  font-size: 13px;
+}
+.sim-note {
+  margin-top: 16px;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  background: var(--orange-soft);
+  color: #9a4f05;
+  font-size: 13px;
+}
+.onboard-footer {
+  margin-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--border-strong);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 800px) {
+  .auth-page {
+    grid-template-columns: 1fr;
+  }
+  .auth-brand {
+    display: none;
+  }
+}

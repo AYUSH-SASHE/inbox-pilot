@@ -1,0 +1,35 @@
+INBOX PILOT DEPLOYMENT PATCH
+
+Copy these files into your existing project, preserving the folder paths:
+- .gitignore -> D:\ai-email-dashboard\.gitignore
+- client\vercel.json -> D:\ai-email-dashboard\client\vercel.json
+- server\index.js -> D:\ai-email-dashboard\server\index.js
+- server\gemini.js -> D:\ai-email-dashboard\server\gemini.js
+- client\emailHelpers.js -> D:\ai-email-dashboard\client\src\utils\emailHelpers.js
+
+Before pushing to GitHub:
+1. Confirm server/.env and server/db.json are NOT staged.
+2. Never paste GEMINI_API_KEY into chat or commit it.
+
+Render backend settings:
+- Root Directory: server
+- Runtime: Node
+- Build Command: npm install
+- Start Command: npm start
+- Environment variables: GEMINI_API_KEY=<your key>, GEMINI_MODEL=gemini-3.5-flash-lite
+- CLIENT_URL=https://YOUR-VERCEL-PROJECT.vercel.app
+- PORT is normally assigned automatically by Render; do not hardcode it.
+
+Vercel frontend settings:
+- Root Directory: client
+- Framework: Vite
+- Build Command: npm run build
+- Output Directory: dist
+- Environment variable: VITE_API_URL=https://YOUR-RENDER-SERVICE.onrender.com
+
+After deployment, test:
+- https://YOUR-RENDER-SERVICE.onrender.com/api/health
+- Vercel app root, /login, /app and /client (refresh each route)
+- Client action should appear in assistant view after a few seconds.
+
+Note: JSON file storage on a free host may reset after restart/redeploy because its filesystem can be ephemeral. This is a prototype limitation; MongoDB Atlas is the persistent-storage upgrade.
